@@ -1,60 +1,79 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>CJ-LAB - Origen y contacto</title>
-<style>
-  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8f9fa; color: #212529; text-align: center; padding: 2rem; }
-  img.logo { max-width: 150px; margin-bottom: 1.5rem; }
-  h1 { font-weight: 700; font-size: 2rem; margin-bottom: 1rem; }
-  p { font-size: 1.125rem; line-height: 1.6; max-width: 480px; margin-bottom: 2rem; color: #444; margin-left: auto; margin-right: auto; }
-  .contact { font-size: 1rem; color: #333; line-height: 1.5; }
-  .contact a { color: #0d6efd; text-decoration: none; }
-  .contact a:hover { text-decoration: underline; }
-  #lang-select { margin-bottom: 2rem; font-size: 1rem; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CJ-LAB</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+
+    header {
+      display: flex;
+      justify-content: flex-end;
+      padding: 1rem;
+      background: #e0e0e0;
+    }
+
+    select {
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    img {
+      max-width: 150px;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <select onchange="changeLanguage(this.value)">
+      <option value="es" selected>🇪🇸 Español</option>
+      <option value="en">🇬🇧 English</option>
+    </select>
+  </header>
 
-  <img src="logo.png" alt="CJ-LAB Gear Logo" class="logo" />
+  <main>
+    <img src="logo.png" alt="Logo de CJ-LAB" />
+    <h1>Bienvenido a CJ-LAB</h1>
+    <p>Somos una empresa dedicada al airsoft, fundada con pasión por la innovación y la precisión.</p>
+    <footer>
+      <p>Contacto: sales@cj-labgear.com</p>
+    </footer>
+  </main>
 
-  <select id="lang-select" aria-label="Seleccionar idioma">
-    <option value="es">Español</option>
-    <option value="en">English</option>
-  </select>
-
-  <h1 id="title">Bienvenido a CJ-LAB</h1>
-  <p id="description">
-    Nacimos con la pasión por el airsoft y el compromiso de ofrecer equipamiento profesional, fiable y adaptado a tus necesidades. Desde nuestros inicios, trabajamos para ser la mejor opción para jugadores que buscan calidad y confianza.
-  </p>
-
-  <div class="contact">
-    <p><strong>Email:</strong> <a href="mailto:sales@cj-labgear.com">sales@cj-labgear.com</a></p>
-  </div>
-
-<script>
-  const translations = {
-    es: {
-      title: "Bienvenido a CJ-LAB",
-      description: "Nacimos con la pasión por el airsoft y el compromiso de ofrecer equipamiento profesional, fiable y adaptado a tus necesidades. Desde nuestros inicios, trabajamos para ser la mejor opción para jugadores que buscan calidad y confianza.",
-    },
-    en: {
-      title: "Welcome to CJ-LAB",
-      description: "We were born with a passion for airsoft and a commitment to provide professional, reliable equipment tailored to your needs. Since our beginnings, we strive to be the best choice for players seeking quality and trust.",
+  <script>
+    function changeLanguage(lang) {
+      if (lang === "en") {
+        window.location.href = "index-en.html";
+      }
     }
-  };
-
-  const langSelect = document.getElementById('lang-select');
-  const title = document.getElementById('title');
-  const description = document.getElementById('description');
-
-  langSelect.addEventListener('change', () => {
-    const selectedLang = langSelect.value;
-    title.textContent = translations[selectedLang].title;
-    description.textContent = translations[selectedLang].description;
-  });
-</script>
-
+  </script>
 </body>
 </html>
