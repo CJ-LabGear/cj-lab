@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CJ-LAB</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+
+    header {
+      display: flex;
+      justify-content: flex-end;
+      padding: 1rem;
+      background: #e0e0e0;
+    }
+
+    select {
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    img {
+      max-width: 150px;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <select onchange="changeLanguage(this.value)">
+      <option value="es">🇪🇸 Español</option>
+      <option value="en" selected>🇬🇧 English</option>
+    </select>
+  </header>
+
+  <main>
+    <img src="logo.png" alt="CJ-LAB Logo" />
+    <h1>Welcome to CJ-LAB</h1>
+    <p>We are a company dedicated to airsoft, founded with a passion for innovation and precision.</p>
+    <footer>
+      <p>Contact: sales@cj-labgear.com</p>
+    </footer>
+  </main>
+
+  <script>
+    function changeLanguage(lang) {
+      if (lang === "es") {
+        window.location.href = "index.html";
+      }
+    }
+  </script>
+</body>
+</html>
